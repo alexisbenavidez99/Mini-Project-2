@@ -29,6 +29,15 @@ body {
   background-color: var(--outer-space);
 }
 
+/* new */
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 2%;
+}
+
 h1,
 h2,
 h3,
@@ -85,6 +94,12 @@ code {
 .card-column {
   /* when the screen resizes, make it so our columns don't jump in size */
   transition: flex-basis 500ms linear;
+
+  /* new */
+  display: flex;
+  flex-flow: row wrap;
+  /* flex: 0 1 100%;
+  I think this may not do anything */
 }
 
 /* make each code card a flexbox column to align and justify content within it */
@@ -93,6 +108,11 @@ code {
   outline: 2px dashed var(--gin);
   outline-offset: -2px;
   transition: all 0.5s ease-in-out;
+
+/* new */
+  flex: 0 1 95%;
+  margin: 3% auto 1%;
+  padding: 1%;
 }
 
 .code-card .card-header {
@@ -101,6 +121,18 @@ code {
   color: var(--heliotrope);
   border: 2px solid var(--gin);
   transition: all 0.5s ease-in-out;
+
+  /* new */
+  position: relative;
+  margin-top: -4rem;
+  width: 95%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+/* new */
+.code-card p {
+  color: var(--heliotrope);
 }
 
 /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
@@ -110,7 +142,8 @@ code {
 }
 
 /* each card's code block grows to the height of the largest code block on the page, making each card even in height */
-.code-card .code-block {}
+.code-card .code-block {
+}
 
 .code-card pre {
   /* set styles to make it so code wraps in <pre> instead of overflowing */
@@ -136,7 +169,11 @@ code {
 @media screen and (min-width: 768px) {
 
   /* on tablets, set columns to only be 50% of the width and not grow */
-  .card-column {}
+  .card-column .code-card {
+    /* new */
+    flex: 0 1 45%;
+
+  }
 
   /* select the last child to grow to full width if it has space to grow */
   .card-column:last-child {}
@@ -147,4 +184,9 @@ code {
   header {}
 
   .card-column {}
+
+        /* new */
+  .card-column .code-card {
+        flex: 0 1 30%;
+  }
 }
