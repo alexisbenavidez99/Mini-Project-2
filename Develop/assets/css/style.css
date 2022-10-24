@@ -87,6 +87,12 @@ code {
     monospace;
 }
 
+footer {
+  width: 100%;
+  margin: 50px;
+  text-align: center;
+}
+
 /* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
 
 
