@@ -98,8 +98,6 @@ code {
   /* new */
   display: flex;
   flex-flow: row wrap;
-  /* flex: 0 1 100%;
-  I think this may not do anything */
 }
 
 /* make each code card a flexbox column to align and justify content within it */
@@ -112,7 +110,10 @@ code {
 /* new */
   flex: 0 1 95%;
   margin: 3% auto 1%;
+  margin-top: 50px;
   padding: 1%;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .code-card .card-header {
@@ -143,6 +144,7 @@ code {
 
 /* each card's code block grows to the height of the largest code block on the page, making each card even in height */
 .code-card .code-block {
+  flex: 1 0 auto;
 }
 
 .code-card pre {
@@ -165,26 +167,24 @@ code {
   user-select: all;
 }
 
+
+footer {
+  text-align: center;
+  width: 100%;
+  margin: 50px 0px;
+}
+
 /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 768px) {
-
   /* on tablets, set columns to only be 50% of the width and not grow */
   .card-column .code-card {
     /* new */
     flex: 0 1 45%;
-
   }
-
-  /* select the last child to grow to full width if it has space to grow */
-  .card-column:last-child {}
 }
 
 /* media query for larger screens */
 @media screen and (min-width: 992px) {
-  header {}
-
-  .card-column {}
-
         /* new */
   .card-column .code-card {
         flex: 0 1 30%;
